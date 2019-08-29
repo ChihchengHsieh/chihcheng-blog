@@ -1,15 +1,15 @@
 <template>
   <v-layout column align-center justify-center>
-    <v-felx>
+    <v-flex>
       <v-avatar size="200">
         <img
           src="https://github.com/ChihchengHsieh/Blogging/blob/master/images/mine_cropped_2.jpg?raw=true"
           alt="Avatar"
         />
       </v-avatar>
-    </v-felx>
+    </v-flex>
     <v-flex>
-      <v-card class="mt-5 text-center" width="50vw">
+      <v-card class="mt-5 text-center" min-width="50vw" >
         <v-card-text class="display-1 font-weight-black white--text">Chihcheng Hsieh</v-card-text>
         <v-card-text>
           <p>Data Scientist | Machine Learning Engineer | Computer Scientist |</p>
@@ -19,6 +19,12 @@
           <p>VISA: 485 PSW</p>
           <p>
             <a class="linkClass" href="https://github.com/ChihchengHsieh?tab=repositories">GitHub</a>
+          </p>
+          <p>
+            <a
+              class="linkClass"
+              href="https://chihchenghsieh.github.io/"
+            >GitHub Page</a>
           </p>
           <p>
             <a
@@ -38,7 +44,7 @@
           <v-rating
             class="px-5"
             half-increments
-            value="5"
+            :value="5"
             color="blue-grey"
             background-color="blue-grey lighten-3"
             readonly
@@ -50,7 +56,7 @@
           <v-rating
             class="px-5"
             half-increments
-            value="3.5"
+            :value="3.5"
             color="blue-grey"
             background-color="blue-grey lighten-3"
             readonly
@@ -62,8 +68,8 @@
 
     <v-flex xs12 class="mb-5">
       <v-layout wrap>
-        <v-flex xs6>
-          <v-card width="25vw" class="ma-5 text-center">
+        <v-flex xs12 sm6>
+          <v-card  class="ma-5 text-center" min-width="25vw" height="20rem">
             <v-card-text class="title font-weight-black white--text">EDUCATION</v-card-text>
             <v-card-text>
               <p class="white--text subtitle-1">Bachelor of Applied Physics</p>
@@ -75,8 +81,8 @@
             </v-card-text>
           </v-card>
         </v-flex>
-        <v-flex xs6>
-          <v-card width="25vw" class="ma-5 text-center">
+        <v-flex xs12 sm6>
+          <v-card  class="ma-5 text-center" min-width="25vw" height="20rem">
             <v-card-text class="title font-weight-black white--text">PROGRAMMING LANGUAGE</v-card-text>
             <v-card-text>
               <p>
@@ -102,7 +108,7 @@
     </v-flex>
     <p class="mt-5 display-1 pt-5">Skills</p>
     <v-flex xs12>
-      <v-card width="50vw" class="text-center mb-5">
+      <v-card class="text-center mb-5"  min-width="50vw">
         <v-card-text
           class="headline font-weight-black white--text mb-3"
         >Data Science | Machine Learning | Artificial Intelligence</v-card-text>
@@ -124,13 +130,13 @@
     </v-flex>
 
     <v-flex xs12>
-      <v-card width="50vw" class="text-center">
+      <v-card class="text-center" min-width="50vw">
         <v-card-text
           class="headline font-weight-black white--text mb-1"
         >Web Development | Frontend | Backend</v-card-text>
         <v-card-text>
           <v-layout wrap justify-space-around>
-            <v-flex xs3>
+            <v-flex xs12 sm6>
               <v-card-text class="title font-weight-bold white--text mt-3">Frontend</v-card-text>
               <p>
                 <span class="white--text subtitle-1 mr-2">Vue.js</span>(Nuxt.js)
@@ -139,7 +145,7 @@
                 <span class="white--text subtitle-1 mr-2">React.js</span>(Redux)
               </p>
             </v-flex>
-            <v-flex xs3>
+            <v-flex xs12 sm6>
               <v-card-text class="title font-weight-bold white--text mt-3">Backend</v-card-text>
               <p>
                 <span class="white--text subtitle-1 mr-2">Python</span>(Django, Web Crawling)

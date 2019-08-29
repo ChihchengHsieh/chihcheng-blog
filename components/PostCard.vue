@@ -1,7 +1,14 @@
 <template>
   <v-layout column>
     <v-flex xs12 v-for="(p, idx) in posts" :key="idx" class="pa-3">
-      <v-card primary-title header class="pa-2" width="80vw" :to="`/post/${p._id}`" v-if="($store.getters.isAdmin || !p.privatePost)">
+      <v-card
+        primary-title
+        header
+        class="pa-2"
+        :max-width="getWitdth"
+        :to="`/post/${p._id}`"
+        v-if="($store.getters.isAdmin || !p.privatePost)"
+      >
         <v-card-title>
           <div>
             <div class="headline font-weight-bold mb-3">{{p.title}}</div>
@@ -11,7 +18,6 @@
         <v-img
           v-if="getFirstImage(p.content)"
           :src="getFirstImage(p.content)"
-          aspect-ratio="1"
           max-width="100%"
           contain
         ></v-img>
@@ -42,6 +48,15 @@ export default {
     },
     formateTime(time) {
       return utils.formateTime(time);
+    }
+  },
+  computed: {
+    getWitdth() {
+      if (this.$vuetify.breakpoint.lgAndUp) {
+        return "80vw";
+      } else {
+        return "100vw";
+      }
     }
   }
 };

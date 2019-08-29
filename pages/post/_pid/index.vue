@@ -1,5 +1,5 @@
 <template >
-  <v-layout column justify-center >
+  <v-layout column justify-center align-center="" >
     <post-content-vue :post="post" />
   </v-layout>
 </template>

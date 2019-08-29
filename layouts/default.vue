@@ -16,7 +16,7 @@
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <nuxt-link class="titleLink px-3" to="/">
         {{title}}
-        <v-icon class="pl-3">fa-gamepad</v-icon>
+        <v-icon class="pl-3" v-if="$vuetify.breakpoint.smAndUp">fa-gamepad</v-icon>
       </nuxt-link>
       <v-spacer />
       <!-- <v-btn class="ma-3" to="/auth/signup" v-if="!$store.getters.isLogin">Sign Up</v-btn>
